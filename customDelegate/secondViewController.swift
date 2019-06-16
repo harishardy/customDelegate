@@ -27,11 +27,14 @@ class secondViewController: UIViewController {
     
     
     @IBAction func buttonX2(_ sender: Any) {
-        
+       
+        let txt = textFieldX1.text!
         
     self.navigationController?.popViewController(animated: true)
         
-        delegateX?.passing(string: "valuePassed")
+        //delegateX?.passing(string: "valuePassed")
+        delegateX?.passing(string: txt)
+ 
     }
     
     

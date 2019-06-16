@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController, secondViewControllerPassing {
     func passing(string: String) {
         print("notified")
-        print(string)
+        //print(string)
+        labelX1.text = String(string)
     }
     
     
@@ -21,6 +22,8 @@ class ViewController: UIViewController, secondViewControllerPassing {
     }
     
     @IBOutlet weak var labelX1: UILabel!
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? secondViewController
@@ -33,6 +36,8 @@ class ViewController: UIViewController, secondViewControllerPassing {
     
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
