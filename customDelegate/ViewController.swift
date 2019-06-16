@@ -8,8 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, secondViewControllerPassing {
+    func passing(string: String) {
+        print("notified")
+        print(string)
+    }
+    
+    
+    @IBAction func buttonX1(_ sender: Any) {
+        
+        performSegue(withIdentifier: "goToSecondVC", sender: self)
+    }
+    
+    @IBOutlet weak var labelX1: UILabel!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? secondViewController
+        {
+            destination.delegateX = self
+        }
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
